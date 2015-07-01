@@ -30,7 +30,10 @@
   "bugs": {
     "url": "https://github.com/compute-io/kruskal-test/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jStat": "^1.2.1",
+    "validate.io-array-like": "^1.0.1"
+  },
   "devDependencies": {
     "chai": "2.x.x",
     "mocha": "2.x.x",

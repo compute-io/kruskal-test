@@ -4,6 +4,16 @@ kruskal-test
 
 > Computes the Kruskal-Wallis test for equal medians.
 
+The Kruskal-Wallis rank sum test evaluates for multiple samples the null hypothesis that their medians are identical. The Kruskal-Wallis test is a nonparametric test which does not require the data to be normally distributed.
+
+To carry out the test, the rank sums `S_h` of the individual groups are calculated. The test statistic is then calculated as
+
+<div class="equation" align="center" data-raw-text="H= \frac{\tfrac{12}{N(N+1)}\sum_h\tfrac{S_h^2}{n_h}-3(N+1)}{1-\tfrac{1}{(N^3-N)} \sum t_{r(i)}^3 - t_{r(i)}}" data-equation="eq:kruskal-test-statistic">
+	<img src="" alt="Equation for the Kruskal-Wallis test statistic.">
+	<br>
+</div>
+
+where `N` denotes the total number of observations and `t_{r(i)}` are the number of tied observations with rank $i$.
 
 ## Installation
 
@@ -17,18 +27,43 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'compute-kruskal-test' );
+var kruskal = require( 'compute-kruskal-test' );
 ```
 
-#### foo( arr )
+#### kruskal( a,b[c,...,k] )
 
-What does this function do?
+For input arrays `a`, `b`, ... holding numeric observations, this function calculates the Kruskal-Wallis rank sums test, which tests the null hypothesis that the medians in all `k` groups are the same. The function returns an object holding the calculated test statistic `K`, the `pValue` of the test and the degrees of freedom (`df`).
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-kruskal-test' );
+var kruskal = require( 'compute-kruskal-test' );
+
+var x, y, z,
+	out,
+	table;
+
+// data from Hollander & Wolfe (1973), 116.
+x = [2.9, 3.0, 2.5, 2.6, 3.2];
+y = [3.8, 2.7, 4.0, 2.4];
+z = [2.8, 3.4, 3.7, 2.2, 2.0];
+
+out = kruskal( x, y, z );
+/*
+{ H: 0.7714,
+  df: 2,
+  pValue: 0.6799 }
+*/
+
+table = out.toString();
+/*
+Kruskal-Wallis rank sum test.
+	null hypothesis: the medians of all groups are the same.
+	test statistic: 0.7714
+	df: 2
+	p-value: 0.68
+*/
 ```
 
 To run the example code from the top-level application directory,

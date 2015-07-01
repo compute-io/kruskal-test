@@ -72,7 +72,7 @@ describe( 'compute-kruskal-test', function tests() {
 		actual = kruskal( x, y, z );
 
 		// evaluated in R
-		assert.closeTo( actual.K,  0.77143, 1e-4 );
+		assert.closeTo( actual.H,  0.77143, 1e-4 );
 		assert.deepEqual( actual.df, 2 );
 		assert.closeTo( actual.pValue, 0.68, 1e-4 );
 
@@ -80,7 +80,7 @@ describe( 'compute-kruskal-test', function tests() {
 		actual = kruskal( [ 2, 2, 5, 7 ], [ 3, 3, 4, 9 ] );
 
 		// evaluated in R
-		assert.closeTo( actual.K,  0.34146, 1e-4 );
+		assert.closeTo( actual.H,  0.34146, 1e-4 );
 		assert.deepEqual( actual.df, 1 );
 		assert.closeTo( actual.pValue, 0.559, 1e-4 );
 
@@ -88,9 +88,8 @@ describe( 'compute-kruskal-test', function tests() {
 
 
 	it( 'should print a formatted output via .toString() method', function test() {
-		var data, actual;
+		var actual;
 
-		data = [ 2, 4, 5, 3, 8, 2 ];
 		actual = kruskal( [ 2, 4, 5], [ 1, 3, 6 ] );
 
 		expect( actual.toString() ).to.be.a.string;
