@@ -13,7 +13,7 @@ To carry out the test, the rank sums `S_h` of the individual groups are calculat
 	<br>
 </div>
 
-where `N` denotes the total number of observations and `t_{r(i)}` are the number of tied observations with rank $i$.
+where `N` denotes the total number of observations and `t_{r(i)}` are the number of tied observations with rank *i*.
 
 ## Installation
 
