@@ -9,7 +9,7 @@ The Kruskal-Wallis rank sum test evaluates for multiple samples the null hypothe
 To carry out the test, the rank sums `S_h` of the individual groups are calculated. The test statistic is then calculated as
 
 <div class="equation" align="center" data-raw-text="H= \frac{\tfrac{12}{N(N+1)}\sum_h\tfrac{S_h^2}{n_h}-3(N+1)}{1-\tfrac{1}{(N^3-N)} \sum t_{r(i)}^3 - t_{r(i)}}" data-equation="eq:kruskal-test-statistic">
-	<img src="" alt="Equation for the Kruskal-Wallis test statistic.">
+	<img src="https://cdn.rawgit.com/compute-io/kruskal-test/365e7d2b36f2011c905fc30177b949dedd4fff34/docs/img/eqn.svg" alt="Equation for the Kruskal-Wallis test statistic.">
 	<br>
 </div>
 
@@ -109,7 +109,7 @@ $ make view-cov
 
 ## Copyright
 
-Copyright &copy; 2015. The Compute.io Authors.
+Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 
 
 [npm-image]: http://img.shields.io/npm/v/compute-kruskal-test.svg
